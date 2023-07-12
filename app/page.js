@@ -105,7 +105,7 @@ export default function Home() {
 
         <div className="Search bar">
           <div className="flex justify-center mt-10 mb-10">
-            <div className="w-full md:w-1/2">
+            <div className="w-full px-2 md:w-1/2">
               <div className="relative flex w-full flex-wrap items-stretch space-x-2 border-stone-900 shadow-lg bg-white rounded-full p-2 ">
                 <img className="h-10" src="https://i.postimg.cc/CLdDFfqS/Group-1.png" alt=" Logoimfinity" />
                 <p className="rounded-lg bg-gray-700/10 text-black pt-2 px-2 gap-2">imagine :</p>
