@@ -4,6 +4,11 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import * as fcl from "@onflow/fcl";
 import { useRouter } from "next/navigation";
+import { FaWallet } from "react-icons/fa6";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+
 
 fcl
   .config()
@@ -12,6 +17,8 @@ fcl
   .put("app.detail.icon", "https://fcl-discovery.onflow.org/images/blocto.png")
   .put("app.detail.title", "Imfinite");
 
+
+  
 const items = [
   {
     id: 1,
@@ -23,6 +30,7 @@ const items = [
   { id: 3, img: "/img/dolphin.webp", title: "dolphin on mars", prompt: "dolphin on mars artstation, hd, dramatic lighting, detailed" },
 ];
 
+
 export default function Home() {
   const router = useRouter();
   const [user, setUser] = useState({ loggedIn: null });
@@ -33,25 +41,35 @@ export default function Home() {
     return router.push("/dashboard");
   }
 
+
+  useEffect(()=>{
+    AOS.init({
+    })
+  }
+  )
+
   return (
     <main>
-      <section className="bg-gradient-to-tr from-kuning via-biru to-ungu">
+      <section className="gradient-bg">
         <nav className="sticky inset-x-0 top-0 z-10 flex h-20 w-full items-center justify-center border-b border-white/70 bg-white/40 backdrop-blur">
           <div className="container flex items-center justify-between px-4 lg:px-6">
             <div className="flex items-center gap-6">
               <a href="/" className="flex items-center gap-3">
-                <img src="https://i.postimg.cc/NjPzcv2N/Group-4.png" alt="Logo" className="h-7" />
+                <img src="https://i.postimg.cc/NjPzcv2N/Group-4.png" alt="Logo" className="h-6" />
               </a>
 
               <a href="#demo" className="text-gray- text-sm font-bold hover:text-ungutext">
                 How to Use
               </a>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="items-center gap-2 ">
               <button
                 onClick={() => fcl.authenticate()}
-                className="rounded-2xl bg-black px-4 py-2 text-sm font-bold text-white transition-all hover:-translate-y-px hover:shadow-lg hover:shadow-black/20 hover:contrast-125"
+                className="items-center rounded-2xl bg-black px-4 py-2 text-sm font-bold text-white transition-all 
+                hover:-translate-y-px hover:shadow-lg hover:shadow-black/20 hover:contrast-150 flex hover:text-ungutext
+                hover:bg-biru hover:border-ungu hover:border-solid hover:border-2"
               >
+              <FaWallet className="mr-2" />
                 Connect Wallet
               </button>
             </div>
@@ -60,31 +78,38 @@ export default function Home() {
 
         <div className="container mx-auto px-5">
           <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center">
+            <div className="order-2 md:order-1">
             <div className="relative">
-              <div className="font-size40 font-bold">
+              <div className="font-size40 md:font-size20 font-bold">
                 Make Your
                 <span style={{ color: "#EB16FF" }}> Imagination </span>
                 Images Come True With Our
                 <span style={{ color: "#EB16FF" }}> AI Assistance </span>
               </div>
-              <a href="#demo" className="px-5 py-2.5 bg-black rounded-full text-white font-bold text-lg mt-4 inline-block">
+              <a href="#demo" className="rounded-lg bg-black px-4 py-2 text-lg font-bold text-white transition-all 
+                hover:-translate-y-px hover:shadow-lg hover:shadow-black/20 hover:contrast-150 hover:text-ungutext
+                hover:bg-biru hover:border-ungu hover:border-solid hover:border-2 inline-block">
                 Demo
               </a>
             </div>
+            </div>
+        
 
-            <div className="relative">
-              <img src="https://i.postimg.cc/L8sbw85Y/ai.png" alt="ai" className="w-full" />
+            <div className=" order-1 md:order-2">
+              <div className="w-full aspect-square relative animate-squeeze-slow">
+              <img src="https://i.postimg.cc/sfWKhYmR/Ai-2.png" alt="ai" className="object-cover"/>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="mt-16 mb-7" id="demo">
-          <div className="font-size40 flex justify-center bg-clip-text font-bold">
-            <p style={{ color: "#EB16FF", backgroundColor: "black" }}>DEMO</p>
+        <div  data-aos="fade-up" className="mt-16 mb-7" id="demo">
+          <div className="font-size40 flex justify-center bg-clip-text font-bold ">
+            <p style={{ color: "#EB16FF" }}>DEMO</p>
           </div>
         </div>
 
-        <div className="flex grid-cols-3 justify-center gap-3">
+        <div data-aos="fade-in" className="flex grid-cols-3 justify-center gap-3 px-2">
           {items.map((i, idx) => (
             <div className="flate" key={i.id}>
               <button
@@ -103,9 +128,9 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="Search bar">
+        <div data-aos="zoom-in" className="Search bar">
           <div className="flex justify-center mt-10 mb-10">
-            <div className="w-full md:w-1/2">
+            <div className="w-full px-2 md:w-1/2">
               <div className="relative flex w-full flex-wrap items-stretch space-x-2 border-stone-900 shadow-lg bg-white rounded-full p-2 ">
                 <img className="h-10" src="https://i.postimg.cc/CLdDFfqS/Group-1.png" alt=" Logoimfinity" />
                 <p className="rounded-lg bg-gray-700/10 text-black pt-2 px-2 gap-2">imagine :</p>
@@ -135,7 +160,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="max-w-3xl mx-auto">
+        <div data-aos="flip-up" className="max-w-3xl mx-auto">
           <div className="box shadow-lg w-100 h-full ">
             <img
               className="w-full aspect-[3/2] object-top object-cover rounded-lg border border-b-kuning border-t-ungu border-r-biru border-l-ungutext"
@@ -148,21 +173,24 @@ export default function Home() {
 
         <div className="container mx-auto px-5 pb-20 mt-20">
           <div className="fitur grid justify-center gap-14 p-3 grid-cols-1 md:grid-cols-3">
-            <div className="card rounded-2xl border-2 border-fuchsia-700 p-5 shadow-md shadow-black hover:bg-white/70 w-full">
+            <div data-aos="fade-up"
+     data-aos-duration="3000" className="card rounded-2xl border-2 border-fuchsia-700 p-5 shadow-md shadow-black w-full">
               <img src="https://i.postimg.cc/cLBxL78z/search.png" className="card-img-top w-16" alt="search" />
               <div className="card-body">
-                <h5 className="font-size20 font-bold">Search You Imagination</h5>
+                <h5 className="font-size20 font-bold">Search Your Imagination</h5>
                 <p className="card-text font-size16 font-medium">Find an imaginary image of the text that you enter directly.</p>
               </div>
             </div>
-            <div className="card rounded-2xl border-2 border-fuchsia-700 p-5 shadow-md shadow-black hover:bg-white/70 w-full">
+            <div div data-aos="fade-up"
+     data-aos-duration="3000" className="card rounded-2xl border-2 border-fuchsia-700 p-5 shadow-md shadow-black/70 w-full">
               <img src="https://i.postimg.cc/6pS1vqGN/galery-1.png" className="card-img-top w-16" alt="search" />
               <div className="card-body">
                 <h5 className="font-size20 font-bold">Get Your Image</h5>
                 <p className="card-text font-size16 font-medium">All images are directly generated by AI with stunning results.</p>
               </div>
             </div>
-            <div className="card rounded-2xl border-2 border-fuchsia-700 p-5 shadow-md shadow-black hover:bg-white/70 w-full">
+            <div div data-aos="fade-up"
+     data-aos-duration="3000" className="card rounded-2xl border-2 border-fuchsia-700 p-5 shadow-md shadow-black/70 w-full">
               <img src="https://i.postimg.cc/nLBT9kJv/icon-download-1.png" className="card-img-top w-16" alt="search" />
               <div className="card-body">
                 <h5 className="font-size20 font-bold">Easy Download</h5>

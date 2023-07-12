@@ -1,10 +1,11 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Imfinite",
+  title: "IMFINITE",
   description: "Make Your Imagination Images Come True With Our AI Assistance",
 };
 

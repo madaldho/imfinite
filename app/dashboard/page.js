@@ -4,6 +4,7 @@ import * as fcl from "@onflow/fcl";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { FaWallet } from "react-icons/fa6";
 
 fcl
   .config()
@@ -103,7 +104,7 @@ transaction(amount: UFix64, target: Address) {
   };
 
   return (
-    <section className="bg-gradient-to-tr from-kuning via-biru to-ungu" x-data="data">
+    <section className="gradient-bg" x-data="data">
       {isTrx && (
         <div className="fixed inset-0 z-20 bg-white/90 flex items-center justify-center">
           <div>
@@ -122,16 +123,18 @@ transaction(amount: UFix64, target: Address) {
         </div>
       )}
 
-      <nav className="sticky inset-x-0 top-0 z-10 flex h-20 w-full items-center justify-center border-b border-white/70 bg-white/40">
+      <nav className="sticky inset-x-0 top-0 z-10 flex h-20 w-full items-center justify-center border-b border-white/30 bg-white/40 backdrop-blur-sm">
         <div className="container flex items-center justify-between px-4 lg:px-6">
           <div className="flex items-center gap-6">
             <a href="/" className="flex items-center gap-3">
-              <img src="https://i.postimg.cc/NjPzcv2N/Group-4.png" alt="Logo" className="h-7" />
+              <img src="https://i.postimg.cc/NjPzcv2N/Group-4.png" alt="Logo" className="h-6" />
             </a>
           </div>
           <div className="flex items-center gap-2">
-            <button className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
-              {user?.addr} ({myFlow?.toFixed(1)} FLOW)
+            <button className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md
+             text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+              <FaWallet className="mr-2" />
+               {user?.addr} ({myFlow?.toFixed(1)} FLOW)
             </button>
             <button className="p-1.5 bg-red-500 rounded-md" onClick={() => fcl.unauthenticate()}>
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
