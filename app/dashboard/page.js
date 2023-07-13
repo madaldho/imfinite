@@ -73,7 +73,7 @@ transaction(amount: UFix64, target: Address) {
     console.log(txId);
     await fcl.tx(txId).onceSealed();
     setIsTrx(false);
-    setMyFlow((prev) => (prev - cost));
+    setMyFlow((prev) => prev - cost);
 
     const response = await fetch("/api/predictions", {
       method: "POST",
@@ -91,7 +91,10 @@ transaction(amount: UFix64, target: Address) {
     }
     setPrediction(prediction);
 
-    while (prediction.status !== "succeeded" && prediction.status !== "failed") {
+    while (
+      prediction.status !== "succeeded" &&
+      prediction.status !== "failed"
+    ) {
       await sleep(5000);
       const response = await fetch("/api/predictions/" + prediction.id);
       prediction = await response.json();
@@ -108,7 +111,11 @@ transaction(amount: UFix64, target: Address) {
       {isTrx && (
         <div className="fixed inset-0 z-20 bg-white/90 flex items-center justify-center">
           <div>
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 animate-spin mx-auto mb-5" viewBox="0 0 24 24">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-10 h-10 animate-spin mx-auto mb-5"
+              viewBox="0 0 24 24"
+            >
               <path
                 fill="none"
                 stroke="currentColor"
@@ -127,17 +134,33 @@ transaction(amount: UFix64, target: Address) {
         <div className="container flex items-center justify-between px-4 lg:px-6">
           <div className="flex items-center gap-6">
             <a href="/" className="flex items-center gap-3">
-              <img src="https://i.postimg.cc/NjPzcv2N/Group-4.png" alt="Logo" className="h-6" />
+              <img
+                src="https://i.postimg.cc/NjPzcv2N/Group-4.png"
+                alt="Logo"
+                className="h-6"
+              />
             </a>
           </div>
           <div className="flex items-center gap-2">
-            <button className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md
-             text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+            <button
+              className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md
+             text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
+            >
               <FaWallet className="mr-2" />
-               {user?.addr} ({myFlow?.toFixed(1)} FLOW)
+              {user?.addr} ({myFlow?.toFixed(1)} FLOW)
             </button>
-            <button className="p-1.5 bg-red-500 rounded-md" onClick={() => fcl.unauthenticate()}>
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <button
+              className="p-1.5 bg-red-500 rounded-md"
+              onClick={() => fcl.unauthenticate()}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -149,8 +172,8 @@ transaction(amount: UFix64, target: Address) {
         </div>
       </nav>
       <div className="container mx-auto px-5">
-        <h1 className="text-center font-bold text-5xl mt-12">
-          Type Your <span className="text-ungutext">Imagine</span> Here
+        <h1 className="text-center font-extrabold text-5xl mt-12 custom-ts">
+          Type Your <span className="gradient-text-animation">Imagine</span> Here
         </h1>
       </div>
       <div className="max-w-4xl mx-auto px-5  mb-10">
@@ -159,8 +182,14 @@ transaction(amount: UFix64, target: Address) {
             onSubmit={handleSubmit}
             className="relative flex w-full flex-wrap items-stretch space-x-2 border-stone-900 shadow-lg bg-white rounded-full p-2 "
           >
-            <img className="h-10" src="https://i.postimg.cc/CLdDFfqS/Group-1.png" alt=" Logoimfinity" />
-            <p className="rounded-lg bg-gray-700/10 text-black pt-2 px-2 gap-2">imagine :</p>
+            <img
+              className="h-10"
+              src="https://i.postimg.cc/CLdDFfqS/Group-1.png"
+              alt=" Logoimfinity"
+            />
+            <p className="rounded-lg bg-gray-700/10 text-black pt-2 px-2 gap-2">
+              imagine :
+            </p>
             <input
               type="text"
               name="prompt"
@@ -172,7 +201,12 @@ transaction(amount: UFix64, target: Address) {
               type="submit"
               id="button-addon1"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                className="h-5 w-5"
+              >
                 <path
                   fillRule="evenodd"
                   d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
@@ -205,7 +239,11 @@ transaction(amount: UFix64, target: Address) {
                   />
                 ) : (
                   <div className="text-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 animate-spin mx-auto mb-5" viewBox="0 0 24 24">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-10 h-10 animate-spin mx-auto mb-5"
+                      viewBox="0 0 24 24"
+                    >
                       <path
                         fill="none"
                         stroke="currentColor"
@@ -231,7 +269,12 @@ transaction(amount: UFix64, target: Address) {
               download="imfinite.png"
               className="inline-flex items-center gap-4 px-7 py-3 bg-red-600 text-white font-bold rounded-lg mt-6"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
                 <path
                   fill="currentColor"
                   d="M6 20q-.825 0-1.413-.588T4 18v-3h2v3h12v-3h2v3q0 .825-.588 1.413T18 20H6Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11l-5 5Z"
@@ -239,9 +282,20 @@ transaction(amount: UFix64, target: Address) {
               </svg>
               <span>Download</span>
             </a>
-            <a href="/dashboard" className="inline-flex items-center gap-4 px-7 py-3 bg-ungutext text-white font-bold rounded-lg mt-6">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                <path fill="currentColor" d="M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6z" />
+            <a
+              href="/dashboard"
+              className="inline-flex items-center gap-4 px-7 py-3 bg-ungutext text-white font-bold rounded-lg mt-6"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6z"
+                />
               </svg>
               <span>Create New</span>
             </a>
