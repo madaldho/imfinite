@@ -36,17 +36,13 @@ export default function Home() {
   const [user, setUser] = useState({ loggedIn: null });
   const [demo, setDemo] = useState(0);
   useEffect(() => fcl.currentUser.subscribe(setUser), []);
-
+  useEffect(()=>{
+    AOS.init({})
+  })
+  
   if (user?.loggedIn) {
     return router.push("/dashboard");
   }
-
-
-  useEffect(()=>{
-    AOS.init({
-    })
-  }
-  )
 
   return (
     <main>
