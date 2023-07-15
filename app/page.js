@@ -60,13 +60,18 @@ export default function Home() {
               <a href="/" className="flex items-center gap-3">
                 <img
                   src="https://i.postimg.cc/NjPzcv2N/Group-4.png"
-                  alt="Logo"
-                  className="h-6"
+                  alt="Logo layar besar "
+                  className="h-6 hidden sm:block"
+                />
+                <img
+                  src="https://i.postimg.cc/TPdp25bP/imfiniteee.png"
+                  alt="Logo layar kecil"
+                  className="h-6 block sm:hidden"
                 />
               </a>
 
               <a
-                href="#demo"
+                href="https://youtu.be/QBH6FEqFI6U"
                 className="htu text-gray- text-sm font-bold hover:text-ungutext text"
               >
                 How to Use
@@ -92,9 +97,15 @@ export default function Home() {
               <div className="relative">
                 <div className="font-size40 md:font-size20 font-extrabold custom-ts">
                   Make Your
-                  <span className="gradient-text-animation custom-ts"> Imagination </span>
+                  <span className="gradient-text-animation custom-ts">
+                    {" "}
+                    Imagination{" "}
+                  </span>
                   Images Come True With Our
-                  <span className="gradient-text-animation custom-ts"> AI Assistance </span>
+                  <span className="gradient-text-animation custom-ts">
+                    {" "}
+                    AI Assistance{" "}
+                  </span>
                 </div>
                 <a
                   href="#demo"
@@ -121,18 +132,16 @@ export default function Home() {
 
         <div data-aos="fade-up" className="mt-16 mb-7" id="demo">
           <div className="font-size40 flex justify-center bg-clip-text font-extrabold ">
-            <p className="gradient-text-animation custom-ts">
-              DEMO
-            </p>
+            <p className="gradient-text-animation custom-ts">DEMO</p>
           </div>
         </div>
 
         <div
           data-aos="fade-in"
-          className="flex grid-cols-3 justify-center gap-3 px-2"
+          className="flex grid-cols-3 justify-center gap-3 px-2 "
         >
           {items.map((i, idx) => (
-            <div className="flate" key={i.id}>
+            <div className="flate " key={i.id}>
               <button
                 onClick={() => setDemo(idx)}
                 className="group mx-auto block max-w-xs space-y-2 rounded-full
@@ -174,9 +183,10 @@ export default function Home() {
                   aria-describedby="button-addon1"
                   placeholder={items[demo]?.prompt}
                 />
-                <a
+                <button
+                  disabled
                   href="/dashboard"
-                  className="relative z-[2] flex items-center rounded-r-2xl  bg- px-6 py-2.5 text-xs font-medium uppercase leading-tight text-black shadow-md transition duration-150 ease-in-out hover:bg-white/70 hover:shadow-lg focus:bg-white focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg"
+                  className="cursor-not-allowed relative z-[2] flex items-center rounded-r-2xl  bg- px-6 py-2.5 text-xs font-medium uppercase leading-tight text-black shadow-md transition duration-150 ease-in-out hover:bg-white/70 hover:shadow-lg focus:bg-white focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg"
                   type="button"
                   id="button-addon1"
                 >
@@ -192,7 +202,7 @@ export default function Home() {
                       clipRule="evenodd"
                     />
                   </svg>
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -266,6 +276,14 @@ export default function Home() {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+        <div className="footer bg-black/80 text-center">
+          <div className="justify-center p-10">
+            <p className="font-size40 md:font-size20 font-extrabold gradient-text-animation custom-ts"> IMAGINE YOUR IMAGINATION
+            </p>
+
+            
           </div>
         </div>
       </section>

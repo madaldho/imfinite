@@ -136,8 +136,13 @@ transaction(amount: UFix64, target: Address) {
             <a href="/" className="flex items-center gap-3">
               <img
                 src="https://i.postimg.cc/NjPzcv2N/Group-4.png"
-                alt="Logo"
-                className="h-6"
+                alt="Logo layar besar "
+                className="h-6 hidden sm:block"
+              />
+              <img
+                src="https://i.postimg.cc/TPdp25bP/imfiniteee.png"
+                alt="Logo layar kecil"
+                className="h-6 block sm:hidden"
               />
             </a>
           </div>
@@ -173,7 +178,8 @@ transaction(amount: UFix64, target: Address) {
       </nav>
       <div className="container mx-auto px-5">
         <h1 className="text-center font-extrabold text-5xl mt-12 custom-ts">
-          Type Your <span className="gradient-text-animation">Imagine</span> Here
+          Type Your <span className="gradient-text-animation">Imagine</span>{" "}
+          Here
         </h1>
       </div>
       <div className="max-w-4xl mx-auto px-5  mb-10">
@@ -264,7 +270,6 @@ transaction(amount: UFix64, target: Address) {
         {prediction && prediction.output && (
           <div className="flex items-center justify-center gap-5">
             <a
-              target="_blank"
               href={prediction.output[prediction.output.length - 1]}
               download="imfinite.png"
               className="inline-flex items-center gap-4 px-7 py-3 bg-red-600 text-white font-bold rounded-lg mt-6"
