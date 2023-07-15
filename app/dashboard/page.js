@@ -269,9 +269,13 @@ transaction(amount: UFix64, target: Address) {
 
         {prediction && prediction.output && (
           <div className="flex items-center justify-center gap-5">
-            <a
-              href={prediction.output[prediction.output.length - 1]}
-              download="imfinite.png"
+            <button
+              onClick={() => {
+                const linkhasil = document.createElement("a");
+                linkhasil.href = prediction.output[prediction.output.length - 1];
+                linkhasil.download = "imfinite.png";
+                linkhasil.click();
+              }}
               className="inline-flex items-center gap-4 px-7 py-3 bg-red-600 text-white font-bold rounded-lg mt-6"
             >
               <svg
@@ -286,7 +290,7 @@ transaction(amount: UFix64, target: Address) {
                 />
               </svg>
               <span>Download</span>
-            </a>
+            </button>
             <a
               href="/dashboard"
               className="inline-flex items-center gap-4 px-7 py-3 bg-ungutext text-white font-bold rounded-lg mt-6"
