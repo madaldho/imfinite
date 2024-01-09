@@ -1,0 +1,29 @@
+{
+  "name": "imfinite",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@tailwindcss/forms": "^0.5.7",
+    "@web5/api": "^0.8.3",
+    "aos": "^2.3.4",
+    "crypto-browserify": "^3.12.0",
+    "next": "14.0.4",
+    "process": "^0.11.10",
+    "react": "^18",
+    "react-dom": "^18",
+    "stream-browserify": "^3.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.4",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0"
+  }
+}

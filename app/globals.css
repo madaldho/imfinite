@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Montserrat:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font-size20 {
+  font-size: 20px;
+}
+
+.font-size40 {
+  font-size: 40px;
+}
+
+.font-size30 {
+  font-size: 30px;
+}
+
+.font-size16 {
+  font-size: 16px;
+}
+
+.card {
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.438);
+  border-radius: 28px;
+ 
+}
+
+.card:hover {
+  background: linear-gradient(to bottom left, #F993FF, #93FFF9);
+  color: hsl(297, 100%, 50%);text-shadow: 5px;
+
+}
+
+.htu{
+  position: relative;
+ letter-spacing: 0.5px;
+  padding: 0 10px;
+}
+.htu:after{
+  content: "";
+  position: absolute;
+  background-color: hsl(297, 100%, 50%);
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0.3s;
+}
+.htu:hover:after{
+  width: 100%;
+}
+
+.custom-ts {
+  text-shadow: 2px 2px 4px rgba(1, 1, 0, 0.2);  
+}
+
+.gradient-text-animation{
+  background: linear-gradient(to right,#ec4899, #3b82f6, #a855f7, #ec4899);
+  background-size: 200% auto;
+  animation: gradientAnimation 5s infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-bg {
+  background: linear-gradient(to bottom left, #F993FF, #93FFF9, #FFF993, #F993FF);
+  background-size: 200% auto;
+  animation: gradientAnimation 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-squeeze-slow {
+  animation: animate-squeeze-slow 4s infinite;
+}
+
+@keyframes animate-squeeze-slow {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
