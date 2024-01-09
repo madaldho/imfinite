@@ -188,7 +188,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="footer bg-black/80 text-center">
+        <div className="footer bg-cover bg-center  text-center" style="background-image: url('https://i.postimg.cc/cHjgwsn3/backgorund.png');">
           <div className="justify-center p-10">
             <p className="font-size40 md:font-size20 font-extrabold gradient-text-animation custom-ts"> IMAGINE YOUR IMAGINATION</p>
           </div>
