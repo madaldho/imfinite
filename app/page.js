@@ -86,7 +86,7 @@ export default function Home() {
 
             <div className=" order-1 md:order-2">
               <div className="w-full aspect-square relative animate-squeeze-slow">
-                <img src="https://ibb.co/JjQw55n" alt="ai" className="object-cover" />
+                <img src="https://i.postimg.cc/6q857ghq/ai-image.png" alt="ai" className="object-cover" />
               </div>
             </div>
           </div>
