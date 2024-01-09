@@ -46,7 +46,7 @@ export default function Home() {
                 <img src="https://i.postimg.cc/TPdp25bP/imfiniteee.png" alt="Logo layar kecil" className="h-6 block sm:hidden" />
               </a>
 
-              <a href="https://youtu.be/QBH6FEqFI6U" className="htu text-gray- text-sm font-bold hover:text-ungutext text">
+              <a href="https://youtu.be/nZEprhKNxmE" className="htu text-gray- text-sm font-bold hover:text-ungutext text">
                 How to Use
               </a>
             </div>
@@ -188,7 +188,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="footer bg-cover bg-center  text-center" style="background-image: url('https://i.postimg.cc/cHjgwsn3/backgorund.png');">
+        <div style={{ backgroundImage: "url('https://i.postimg.cc/cHjgwsn3/backgorund.png')" }} className="footer bg-cover bg-center  text-center">
           <div className="justify-center p-10">
             <p className="font-size40 md:font-size20 font-extrabold gradient-text-animation custom-ts"> IMAGINE YOUR IMAGINATION</p>
           </div>
